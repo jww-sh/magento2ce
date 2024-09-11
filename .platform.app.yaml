@@ -32,6 +32,7 @@ dependencies:
 relationships:
     database: db:mysql
     redis: cache:redis
+    redis-session: session:redis
     opensearch: indexer:opensearch
     rabbitmq: queue:rabbitmq
 

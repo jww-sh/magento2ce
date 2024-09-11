@@ -5,6 +5,9 @@ db:
 cache:
     type: redis:7.2
 
+session:
+    type: redis:7.2
+
 indexer:
     type: opensearch:2
     disk: 512
