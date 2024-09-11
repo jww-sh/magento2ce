@@ -58,7 +58,7 @@ mounts:
 hooks:
   build: |
     set -e
-    [[ $COMPOSER_AUTH =~ "repo.magento.com" ]] && echo repo.magento.com auth token found ✅ || echo '!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!'
+    case $COMPOSER_AUTH in *repo.magento.com*) echo "repo.magento.com auth token found ✅";; *) echo "!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!";; esac
     composer install --no-dev --no-interaction
     php ./vendor/bin/ece-tools build:generate
     php ./vendor/bin/ece-tools build:transfer
