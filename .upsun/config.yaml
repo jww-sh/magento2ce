@@ -30,6 +30,9 @@ applications:
             "/var":
                 source: storage
                 source_path: "var"
+            "/var/log":
+                source: instance
+                source_path: "log"
             "/app/etc":
                 source: storage
                 source_path: "etc"
@@ -39,6 +42,9 @@ applications:
             "/pub/static":
                 source: storage
                 source_path: "static"
+            "/var/reports":
+                source: tmp
+                source_path: "reports"
         # The hooks executed at various points in the lifecycle of the application.
         hooks:
             build: |
