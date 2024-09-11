@@ -49,6 +49,7 @@ applications:
         hooks:
             build: |
                 set -e
+                echo $COMPOSER_AUTH
                 composer install --no-dev --no-interaction
                 php ./vendor/bin/ece-tools build:generate
                 php ./vendor/bin/ece-tools build:transfer
