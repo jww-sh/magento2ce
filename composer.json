@@ -1,6 +1,6 @@
 {
     "name": "magento/project-community-edition",
-    "description": "eCommerce Platform for Growth (Community Edition)",
+    "description": "Adobe Commerce 2.4.X (Community Edition)",
     "type": "project",
     "license": [
         "OSL-3.0",
@@ -16,10 +16,9 @@
         "sort-packages": true
     },
     "require": {
-        "magento/ece-tools": "^2002.1",
+        "magento/ece-tools": "^2002",
         "magento/product-community-edition": "^2.4",
-        "magento/composer-dependency-version-audit-plugin": "~0.1",
-        "magento/composer-root-update-plugin": "~2.0",
+        "magento/composer-root-update-plugin": "*",
         "markshust/magento2-module-disabletwofactorauth": "*"
     },
     "autoload": {
