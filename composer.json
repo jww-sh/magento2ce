@@ -42,21 +42,6 @@
             "Magento\\Setup\\": "setup/src/Magento/Setup/"
         }
     },
-    "require-dev": {
-        "allure-framework/allure-phpunit": "~1.5.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "friendsofphp/php-cs-fixer": "~3.3.0",
-        "lusitanian/oauth": "~0.8.10",
-        "magento/magento-coding-standard": "*",
-        "magento/magento2-functional-testing-framework": "^3.7",
-        "pdepend/pdepend": "~2.10.0",
-        "phpmd/phpmd": "^2.9.1",
-        "phpstan/phpstan": "~1.2.0",
-        "phpunit/phpunit": "~9.5.0",
-        "sebastian/phpcpd": "^6.0.3",
-        "squizlabs/php_codesniffer": "~3.6.0",
-        "symfony/finder": "^5.2"
-    },
     "conflict": {
         "gene/bluefoot": "*"
     },
