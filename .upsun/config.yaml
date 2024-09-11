@@ -46,7 +46,7 @@ applications:
         hooks:
             build: |
                 set -e
-                test "${COMPOSER_AUTH#*"repo.magento.com"}" != "$COMPOSER_AUTH" && echo "!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!"
+                test "${COMPOSER_AUTH#*"repo.magento.com"}" != "$COMPOSER_AUTH" || echo "!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!" && exit 1
                 composer install --no-dev --no-interaction
                 php ./vendor/bin/ece-tools build:generate
                 php ./vendor/bin/ece-tools build:transfer
