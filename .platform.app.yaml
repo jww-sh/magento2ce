@@ -58,7 +58,11 @@ mounts:
 hooks:
   build: |
     set -e
-    test "${COMPOSER_AUTH#*"repo.magento.com"}" != "$COMPOSER_AUTH" || echo "!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!" && exit 1
+    if [ "${COMPOSER_AUTH#*"repo.magento.com"}" = "$COMPOSER_AUTH" ]
+    then
+      printf "\n!!!\n Please configure your COMPOSER_AUTH enviromental variable as per the README file \n!!!\n"
+      exit 1
+    fi
     composer install --no-dev --no-interaction
     php ./vendor/bin/ece-tools build:generate
     php ./vendor/bin/ece-tools build:transfer
