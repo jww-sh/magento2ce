@@ -42,13 +42,11 @@ applications:
             "/pub/static":
                 source: storage
                 source_path: "static"
-            "/var/reports":
-                source: tmp
-                source_path: "reports"
         # The hooks executed at various points in the lifecycle of the application.
         hooks:
             build: |
                 set -e
+                [[ $COMPOSER_AUTH =~ "repo.magento.com" ]] && echo repo.magento.com auth token found ✅ || echo '!!! Please configure your COMPOSER_AUTH enviromental variable as per the README file !!!'
                 composer install --no-dev --no-interaction
                 php ./vendor/bin/ece-tools build:generate
                 php ./vendor/bin/ece-tools build:transfer
